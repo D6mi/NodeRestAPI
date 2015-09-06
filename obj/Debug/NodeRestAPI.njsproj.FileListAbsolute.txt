@@ -1,0 +1,2 @@
+c:\users\d6mi\documents\visual studio 2013\Projects\NodeRestAPI\NodeRestAPI\obj\Debug\NodeRestAPI.njsprojResolveAssemblyReference.cache
+c:\users\d6mi\documents\visual studio 2013\Projects\NodeRestAPI\NodeRestAPI\bin\Microsoft.NodejsTools.WebRole.dll

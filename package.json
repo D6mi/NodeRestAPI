@@ -1,0 +1,15 @@
+{
+  "name": "NodeRestAPI",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "NodeRestAPI",
+  "main": "app.js",
+  "dependencies": {
+	"express": "3.x",
+	"mongodb": "~2.0"
+  },
+  "author": {
+    "name": "D6mi",
+    "email": ""
+  }
+}

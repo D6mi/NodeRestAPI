@@ -1,0 +1,4 @@
+*.yml
+*.md
+*.npmignore
+*.patch
