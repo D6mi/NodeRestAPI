@@ -79,7 +79,8 @@ exports.addBook = function (req, res) {
     var book = req.body;
     var valid = true;
     
-    console.log("Name : " + book.name);
+    console.log(JSON.stringify(book));
+    
     var name = book.name;
     if (name == null) {
         valid = false;
@@ -119,7 +120,38 @@ exports.addBook = function (req, res) {
 }
 
 exports.updateBook = function (req, res) {
-    console.log("Update book")
+    var id = req.params.id;
+    var book = req.body;
+    
+    console.log(JSON.stringify(book));
+    
+    db.collection('books', function (err, collection) {
+        if (err) {
+            console.log("[UPDATE BOOK] There was an internal error, couldn't open the 'books' collection.");
+            res.send({
+                message : "There was an internal error.",
+                error : "INTERNAL"
+            });
+        } else {
+            collection.update({ '_id' : mongo.ObjectID(id) }, 
+                book, 
+                { safe : true }, 
+                function (err, result) {
+                    if (err) {
+                        console.log("There was an error updating the book.");
+                        res.send({
+                            message : "There was an error updating the book.",
+                            error : "ERROR"
+                        });
+                    } else {                       
+                        res.send({
+                            message : "Successfully updated the object.",
+                            error : "SUCCESS"
+                        });
+                    }
+                });
+        }
+    });
 }
 
 exports.deleteBook = function (req, res) {
